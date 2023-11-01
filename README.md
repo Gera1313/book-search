@@ -252,3 +252,11 @@ You are required to submit BOTH of the following for review:
 
 ---
 © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+
+## Notes
+
+// "dependencies": {
+//   "@apollo/react-hooks": "^4.0.0",
+//   "bcrypt": "^4.0.1",
+//   "graphql": "^15.7.2",
+//   "jsonwebtoken": "^8.5.1",
