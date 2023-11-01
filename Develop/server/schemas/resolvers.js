@@ -10,7 +10,7 @@ const resolvers = {
         }
         return User.findById(context.user._id);
       },
-      // Maybe define other query resolvers here.
+      // Maybe define other query resolvers here?
     },
 
     Mutation: {
@@ -34,6 +34,7 @@ const resolvers = {
         return { token, user };
       },
       // Define other mutation resolvers here.
+      
     },
   };
   
