@@ -80,17 +80,23 @@ In order for this application to use a GraphQL API, I will need to refactor the 
 
 ## Notes
 
-Behind on projects. Just started this one Oct 30 and it's due Nov 1. Will look at it again sometime after November 15 when I have more time and I'm in no pressure to complete assignments by Nov 15 and to prepare for a 3rd and final project. Stay tuned! 
+Behind on other projects. Just started this one Oct 30 and it's due Nov 1. Will look at it again sometime after November 15 when I have more time and I'm in no pressure to complete assignments by Nov 15 and to prepare for a 3rd and final project. I am encountering errors and I need to fix them.Stay tuned! 
 
 ## Usage
 
 The following images show the CURRENT web application's appearance and functionality. Keep in mind this is a work in progress, it is NOT complete yet (see Notes above).
 
-![Insert screenshot here]() 
+![One of the errors](./Assets/home.png) 
+
+Error I receive when trying to deploy to Heroku:
+
+![One of the errors](./Assets/heroku.png) 
 
 ## Installation
 
-N/A
+```npm install```
+
+```npm run develop```
 
 ## Links
 
