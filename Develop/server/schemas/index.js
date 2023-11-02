@@ -1,6 +1,6 @@
 const { gql } = require('apollo-server-express');
 const typeDefs = require('./typeDefs');
-const resolvers = require('./resolvers');
+const resolvers = require('../schemas/resolvers');
 
 // Defining a base type for my schema
 const rootTypeDefs = gql`

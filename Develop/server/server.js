@@ -4,7 +4,7 @@ const path = require('path');
 const db = require('./config/connection');
 // const routes = require('./routes');
 const typeDefs = require('./schemas'); // ADDED: Import GraphQL type definitions
-const resolvers = require('./resolvers'); // ADDED: Import GraphQL resolvers
+const resolvers = require('./schemas/resolvers'); // ADDED: Import GraphQL resolvers
 
 const app = express();
 const PORT = process.env.PORT || 3001;
