@@ -108,8 +108,6 @@ Error I receive when trying to deploy to Heroku:
 
 Big help thanks to the module activities especially module 21. Spent an entire weekend studying module 21 along with module 19. Watched the Zoom recordings. Will continue with this project at a later time when I'm not pressed with time (see Notes section above).
 
-[This site helped]()
-
 ## Licenses
 
 MIT License
