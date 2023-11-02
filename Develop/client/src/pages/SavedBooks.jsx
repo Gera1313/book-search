@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import {
   Container,
   Card,
@@ -33,7 +33,7 @@ const SavedBooks = () => {
       });
 
       // Use the returned data to update the user data
-      const updatedUser = data.removeBook;
+      // const updatedUser = data.removeBook; // no longer needed?
 
       // upon success, remove the book's id from localStorage
       removeBookId(bookId);
@@ -43,7 +43,7 @@ const SavedBooks = () => {
   };
 
   // if data isn't here yet, say so
-  if (!userDataLength) {
+  if (loading) {
     return <h2>LOADING...</h2>;
   }
 
