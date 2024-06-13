@@ -100,7 +100,7 @@ Error I receive when trying to deploy to Heroku:
 
 ## Links
 
-[Repository](https://github.com/Gera1313/21-book-search)
+[Repository](https://github.com/Gera1313/book-search)
 
 [Deployed Link](Insert here when available)
 
