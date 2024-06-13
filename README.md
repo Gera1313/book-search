@@ -80,7 +80,7 @@ In order for this application to use a GraphQL API, I will need to refactor the 
 
 ## Notes
 
-I am encountering errors and I need to fix them.Stay tuned! 
+June 13, 2024: I am encountering errors and I need to fix them. Stay tuned! 
 
 ## Usage
 
@@ -103,10 +103,6 @@ Error I receive when trying to deploy to Heroku:
 [Repository](https://github.com/Gera1313/book-search)
 
 [Deployed Link](Insert here when available)
-
-## Credits
-
-Big help thanks to the module activities especially module 21. Spent an entire weekend studying module 21 along with module 19. Watched the Zoom recordings. Will continue with this project at a later time when I'm not pressed with time (see Notes section above).
 
 ## Licenses
 
