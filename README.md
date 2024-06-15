@@ -81,6 +81,7 @@ In order for this application to use a GraphQL API, I will need to refactor the 
 ## Notes
 
 June 13, 2024: I am encountering errors and I need to fix them. Stay tuned! 
+June 15: Starting to refactor my code and fix errors. 
 
 ## Usage
 
