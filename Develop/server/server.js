@@ -27,6 +27,8 @@ const startServer = async () => {
   console.log(`Now listening on http://localhost:${PORT}${server.graphqlPath}`);
 };
 
+startServer();
+
 // if we're in production, serve client/build as static assets
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
