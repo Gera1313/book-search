@@ -42,24 +42,18 @@ const resolvers = {
         return { token, user };
       },
 
-      // Define other mutation resolvers here.
-      addUser: async (_, { username, email, password }) => {
-        const user = await User.create({ username, email, password });
-        const token = user.signToken();
-        return { token, user };
-    },
+    saveBook: async (parent, { bookData }, context) => {
+      if (context.user) {
+        const addedBook = await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $push: { savedBooks: bookData } },
+          { new: true }
+        );
 
-    saveBook: async (_, { bookData }) => {
-      if (!context.user) {
-        throw new AuthenticationError('You must be logged in to do this.');
+        return addedBook;
       }
-// Implements logic to save a book to the user's account and return the updated user data
-      const updatedUser = await User.findByIdAndUpdate(
-        context.user._id,
-        { $push: { savedBooks: bookData } },
-        { new: true }
-      );
-      return updatedUser;
+
+      throw new AuthenticationError("You need to be logged in");
     },
 
     removeBook: async (_, { bookId }) => {
