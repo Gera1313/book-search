@@ -4,13 +4,17 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
     Query: {
-      me: async (_, __, context) => { // Maybe put something in blank spaces later on? 
-        if (!context.user) {
-          throw new AuthenticationError('You must be logged in to do this.');
+      me: async (parent, args, context) => {
+        if (context.user) {
+          const userData = away User.findOne({ _id: context.user._id }).select(
+            "-__v -password"
+          );
+
+          return userData;
         }
-        return User.findById(context.user._id);
+
+        throw new AuthenticationError('You must be logged in to do this.');
       },
-      // Maybe define other query resolvers here?
     },
 
     Mutation: {
