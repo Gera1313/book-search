@@ -29,22 +29,11 @@ const startServer = async () => {
 
 startServer();
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
 // if we're in production, serve client/build as static assets
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
-// app.use(routes);
-
-// ADDED 22-30. Create an Apollo Server instance
-const server = new ApolloServer({
-  typeDefs, // Use imported type definitions
-  resolvers, // Use imported resolvers
-  context: ({ req }) => ({ req }), // Pass the req object to the context for authentication
-});
-
-
-// Modified this file. 
-
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
