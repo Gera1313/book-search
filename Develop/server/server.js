@@ -13,8 +13,15 @@ const { typeDefs, resolvers } = require("./schemas");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+const startServer = async () => {
+  const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+    context: authMiddleware,
+  });
+
+  await server.start();
+}
 
 // if we're in production, serve client/build as static assets
 if (process.env.NODE_ENV === 'production') {
@@ -39,3 +46,6 @@ db.once('open', () => {
 
 
 // Modified this file. 
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
