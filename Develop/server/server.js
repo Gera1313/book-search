@@ -1,10 +1,11 @@
 const express = require('express');
-const { ApolloServer } = require('apollo-server-express'); // ADDED: Import Apollo Server
 const path = require('path');
 const db = require('./config/connection');
-// const routes = require('./routes');
-const typeDefs = require('./schemas'); // ADDED: Import GraphQL type definitions
-const resolvers = require('./schemas/resolvers'); // ADDED: Import GraphQL resolvers
+const routes = require('./routes');
+
+// Import Apollo server
+const { ApolloServer } = require('apollo-server-express');
+const { authMiddleware } = require("./utils/auth");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
