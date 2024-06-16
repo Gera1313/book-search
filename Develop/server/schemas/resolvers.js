@@ -56,22 +56,20 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in");
     },
 
-    removeBook: async (_, { bookId }) => {
-      if (!context.user) {
-        throw new AuthenticationError('You must be logged in to do this.');
+    removeBook: async (parent, { bookId }, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { savedBook: { bookId } } },
+          { new: true, runValidators: true }
+        );
+
+        return updatedUser;
       }
 
-      // Implements logic to remove a book from the user's account and return the updated user data
-      const updatedUser = await User.findByIdAndUpdate(
-        context.user._id,
-        { $pull: { savedBooks: { bookId }}},
-        { new: true }
-      );
-      return updatedUser;
+      throw new AuthenticationError("You need to be logged in!");
     },
   },
-  };
-  
-  module.exports = resolvers;
+};
 
-  // Added more code for now but, come back to this one later. The context needs more work
+module.exports = resolvers;
