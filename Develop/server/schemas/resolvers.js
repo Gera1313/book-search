@@ -24,25 +24,24 @@ const resolvers = {
         return { token, user };
       },
 
-      login: async (_, { email, password }) => { // Maybe put something in blank spaces later on? 
-        // Implement user authentication logic here
-
-        // Check the provided credentials, generate and return a token
+      login: async (parent, { email, password }) => {
+        // Implement user authentication logic here. Check the provided credentials, generate and return a token
         const user = await User.findOne({ email });
   
         if (!user) {
           throw new AuthenticationError('Invalid credentials');
         }
   
-        const passwordIsValid = user.checkPassword(password);
+        const correctPw = await user.isCorrectPassword(password);
   
-        if (!passwordIsValid) {
+        if (!correctPw) {
           throw new AuthenticationError('Invalid credentials');
         }
   
-        const token = user.signToken();
+        const token = signToken(user);
         return { token, user };
       },
+
       // Define other mutation resolvers here.
       addUser: async (_, { username, email, password }) => {
         const user = await User.create({ username, email, password });
