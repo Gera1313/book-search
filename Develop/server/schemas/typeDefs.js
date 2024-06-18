@@ -41,4 +41,6 @@ type User {
   }
 `;
 
+module.exports = typeDefs
+
 // Created this file as well. 
