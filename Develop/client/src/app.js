@@ -34,4 +34,6 @@ const client = new ApolloClient({
           </>
         </Router>
       </ApolloProvider>
-    );  
+    );
+
+    export default App;
