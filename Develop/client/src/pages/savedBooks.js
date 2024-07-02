@@ -28,4 +28,18 @@ const SavedBooks = () => {
           return false;
         }
 
+        try {
+            const { data } = await removeBook({ variables: bookId });
+      
+            // upon success, remove book's id from localStorage
+            removeBookId(bookId);
+          } catch (err) {
+            console.error(err);
+          }
+        };
+      
+        if (loading) {
+          return <h2>LOADING...</h2>;
+        }
+
 export default SavedBooks;
