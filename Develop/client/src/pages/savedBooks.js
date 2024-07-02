@@ -21,4 +21,11 @@ const SavedBooks = () => {
     const [removeBook] = useMutation(REMOVE_BOOK);
     const userData = data?.me || [];
 
+    const handleDeleteBook = async (bookId) => {
+        const token = Auth.loggedIn() ? Auth.getToken() : null;
+    
+        if (!token) {
+          return false;
+        }
+
 export default SavedBooks;
