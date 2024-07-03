@@ -41,6 +41,11 @@ const LoginForm = () => {
       setShowAlert(true);
     }
 
-
+    setUserFormData({
+        username: "",
+        email: "",
+        password: "",
+      });
+    };
 
 export default LoginForm;
