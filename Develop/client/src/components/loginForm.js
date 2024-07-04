@@ -7,33 +7,33 @@ import Auth from "../utils/auth";
 import { useMutation } from "@apollo/react-hooks";
 
 const LoginForm = () => {
-    const [userFormData, setUserFormData] = useState({ email: "", password: "" });
-    const [validated] = useState(false);
-    const [showAlert, setShowAlert] = useState(false);
-  
-    const [loginUser] = useMutation(LOGIN_USER);
-  
-    const handleInputChange = (event) => {
-      const { name, value } = event.target;
-      setUserFormData({ ...userFormData, [name]: value });
-    };
-  
-    const handleFormSubmit = async (event) => {
+  const [userFormData, setUserFormData] = useState({ email: "", password: "" });
+  const [validated] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+
+  const [loginUser] = useMutation(LOGIN_USER);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setUserFormData({ ...userFormData, [name]: value });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    // check if form has everything (as per react-bootstrap docs)
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
       event.preventDefault();
-  
-      // check if form has everything (as per react-bootstrap docs)
-      const form = event.currentTarget;
-      if (form.checkValidity() === false) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
+      event.stopPropagation();
+    }
 
-      try {
-        const { data } = await loginUser({
-          variables: { ...userFormData },
-        });
+    try {
+      const { data } = await loginUser({
+        variables: { ...userFormData },
+      });
 
-    // const { token, user } = await response.json();
+      // const { token, user } = await response.json();
       // console.log(user);
       Auth.login(data.login.token);
     } catch (err) {
@@ -42,24 +42,23 @@ const LoginForm = () => {
     }
 
     setUserFormData({
-        username: "",
-        email: "",
-        password: "",
-      });
-    };
+      username: "",
+      email: "",
+      password: "",
+    });
+  };
 
-
-    return (
-        <>
-          <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
-            <Alert
-              dismissible
-              onClose={() => setShowAlert(false)}
-              show={showAlert}
-              variant="danger"
-            >
-              Something went wrong with your login credentials!
-              </Alert>
+  return (
+    <>
+      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+        <Alert
+          dismissible
+          onClose={() => setShowAlert(false)}
+          show={showAlert}
+          variant="danger"
+        >
+          Something went wrong with your login credentials!
+        </Alert>
         <Form.Group>
           <Form.Label htmlFor="email">Email</Form.Label>
           <Form.Control
