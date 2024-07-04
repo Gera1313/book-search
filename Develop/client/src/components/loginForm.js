@@ -48,4 +48,16 @@ const LoginForm = () => {
       });
     };
 
+
+    return (
+        <>
+          <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+            <Alert
+              dismissible
+              onClose={() => setShowAlert(false)}
+              show={showAlert}
+              variant="danger"
+            >
+              Something went wrong with your login credentials!
+
 export default LoginForm;
