@@ -80,7 +80,7 @@ In order for this application to use a GraphQL API, I will need to refactor the 
 
 ## Notes
 
-July 7, 2024: I am encountering errors and I need to fix them.
+July 7, 2024: I am encountering errors and I need to fix them. The page does not display content. 
 
 ## Usage
 
