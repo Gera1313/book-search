@@ -4,13 +4,13 @@ const jwt = require("jsonwebtoken");
 const secret = "mysecretsshhhhh";
 const expiration = "2h";
 
-// Apollo server authentication
-
 module.exports = {
+  // function for our authenticated routes
   authMiddleware: function ({ req }) {
-    //allows token to be sent via req.query or headers
-    let token = req.body.token || req.query.token || req.headers.authorization; 
+    // allows token to be sent via  req.query or headers
+    let token = req.body.token || req.query.token || req.headers.authorization;
 
+    // ["Bearer", "<tokenvalue>"]
     if (req.headers.authorization) {
       token = token.split(" ").pop().trim();
     }
@@ -19,7 +19,7 @@ module.exports = {
       return req;
     }
 
-    // verify token and get user data
+    // verify token and get user data out of it
     try {
       const { data } = jwt.verify(token, secret, { maxAge: expiration });
       req.user = data;

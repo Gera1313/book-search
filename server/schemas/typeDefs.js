@@ -1,16 +1,14 @@
-const { gql } = require('apollo-server-express');
-
-// I define my GraphQL schema. Define the necessary Query and Mutation types.
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-type User {
+  type User {
     _id: ID!
     username: String!
     email: String
     bookCount: Int
     savedBooks: [Book]
   }
-    type Book {
+  type Book {
     bookId: String
     authors: [String]
     description: String
@@ -18,7 +16,7 @@ type User {
     image: String
     link: String
   }
-    type Auth {
+  type Auth {
     token: ID!
     user: User
   }
@@ -30,7 +28,7 @@ type User {
     image: String
     link: String
   }
-    type Query {
+  type Query {
     me: User
   }
   type Mutation {
@@ -41,6 +39,6 @@ type User {
   }
 `;
 
-module.exports = typeDefs
+module.exports = typeDefs;
 
 // Created this file as well. 
