@@ -79,9 +79,7 @@ This is my goal!
 In order for this application to use a GraphQL API, I will need to refactor the API to use GraphQL on the back end and add some functionality to the front end.
 
 ## Notes
-
-July 10, 2024: I am encountering errors and I need to fix them. The page does not display content. 
-July 19, 2024: Fixed most errors, but still can't get save and delete option to pop up. 
+ 
 
 ## Usage
 
