@@ -72,24 +72,13 @@ A user can view their saved books on a separate page, as shown in the following 
 
 ![The Viewing Lernantino's Books page shows the books that the user Lernaninto has saved.](./Assets/21-mern-homework-demo-03.gif)
 
-This is my goal!
-
 ## Getting Started
 
 In order for this application to use a GraphQL API, I will need to refactor the API to use GraphQL on the back end and add some functionality to the front end.
 
 ## Notes
  
-
-## Usage
-
-The following images show the CURRENT web application's appearance and functionality. Keep in mind this is a work in progress, it is NOT complete yet (see Notes above).
-
-![One of the errors](./Assets/home.png) 
-
-Error I receive when trying to deploy to Heroku:
-
-![One of the errors](./Assets/heroku.png) 
+ N/A
 
 ## Installation
 
