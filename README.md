@@ -58,7 +58,7 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 
 ## Mock-Up
 
-The following demonstrates what the application should function like:
+The following demonstrates what the application functions like:
 
 As you can see in the following animation, a user can type a search term (in this case, "star wars") in a search box and the results appear:
 
