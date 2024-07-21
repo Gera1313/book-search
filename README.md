@@ -4,7 +4,7 @@
 
 Most modern websites are driven by two things: data and user demands. This shouldn't come as a surprise, as the ability to personalize user data is the cornerstone of real-world web development today. And as user demands evolve, applications need to be more performant.
 
-I will do the following:
+I have done the following:
 
 1. Set up an Apollo Server to use GraphQL queries and mutations to fetch and modify data, replacing the existing RESTful API.
 
@@ -74,11 +74,11 @@ A user can view their saved books on a separate page, as shown in the following 
 
 ## Getting Started
 
-In order for this application to use a GraphQL API, I will need to refactor the API to use GraphQL on the back end and add some functionality to the front end.
+In order for this application to use a GraphQL API, I refactored the API to use GraphQL on the back end and add some functionality to the front end.
 
 ## Notes
  
- N/A
+ 
 
 ## Installation
 
