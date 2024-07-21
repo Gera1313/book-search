@@ -78,7 +78,7 @@ In order for this application to use a GraphQL API, I refactored the API to use 
 
 ## Notes
  
- 
+ June 21, 2024: Have to delploy to Heroku
 
 ## Installation
 
